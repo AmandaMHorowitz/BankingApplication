@@ -14,9 +14,9 @@ function Deposit(){
       body={show ? (  
               <>
               Balance<br/>
-              <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
+              <input type="input" className="form-control" id="balance" placeholder="Enter Balance" value={balance} onChange={e => setBalance(e.currentTarget.value)} /><br/>
               Deposit<br/>
-              <input type="input" className="form-control" id="amount" placeholder="Enter Amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)}/><br/>
+              <input type="input" className="form-control" id="deposit" placeholder="Enter Amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)}/><br/>
               <button type="submit" className="btn btn-light" onClick={handleCreate}>Deposit</button>
               </>
             ):(
