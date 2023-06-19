@@ -3,19 +3,8 @@ function Deposit(){
   const [status, setStatus]     = React.useState('');
   const [balance, setBalance]   = React.useState('');
   const [deposit, setDeposit]   = React.useState('');
-  const ctx = React.useContext(UserContext);  
-
-  function validate(field, label){
-      if (!field) {
-        setStatus('Error: ' + label);
-        setTimeout(() => setStatus(''),3000);
-        return false;
-      }
-      return true;
-  }
-
+  const ctx = React.useContext(UserContext); 
  
-  
 
   return (
     <Card
@@ -27,7 +16,7 @@ function Deposit(){
               Balance<br/>
               <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
               Deposit<br/>
-              <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
+              <input type="input" className="form-control" id="amount" placeholder="Enter Amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)}/><br/>
               <button type="submit" className="btn btn-light" onClick={handleCreate}>Deposit</button>
               </>
             ):(
