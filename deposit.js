@@ -1,22 +1,21 @@
 function Deposit(){
-  const [show, setShow]         = React.useState(true);
-  const [status, setStatus]     = React.useState('');
-  const [deposit, setDeposit]   = React.useState('');
-  const ctx = React.useContext(UserContext); 
- 
- 
-
+  
+  function addBalance(){
+    console.log(depositamount);
+    if (!validate(deposit,     'deposit'))     return;
+    setShow(false); 
+    
   return (
     <Card
       bgcolor="dark"
       header="Deposit"
-      title= "balance"
+      title= "Balance:"
       status={status}
       body={show ? (  
               <>
               Deposit<br/>
               <input type="input" className="form-control" id="deposit" placeholder="Enter Amount" value={deposit} onChange={e => setDeposit(e.currentTarget.value)}/><br/>
-              <button type="submit" className="btn btn-light" onClick={handleCreate}>Deposit</button>
+              <button type="submit" className="btn btn-light" onClick={addBalance}>Deposit</button>
               </>
             ):(
               <>
