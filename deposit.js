@@ -1,19 +1,16 @@
 function Deposit(){
   const [show, setShow]         = React.useState(true);
   const [status, setStatus]     = React.useState('');
-  const [balance, setBalance]   = React.useState('');
   const [deposit, setDeposit]   = React.useState('');
   const ctx = React.useContext(UserContext); 
  
- function balance(){
-   
- }
+ 
 
   return (
     <Card
       bgcolor="dark"
       header="Deposit"
-      title= balance
+      title= "balance"
       status={status}
       body={show ? (  
               <>
