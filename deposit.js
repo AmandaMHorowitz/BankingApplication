@@ -1,44 +1,29 @@
 function Deposit(){
-  const [depositAmt, setDepositAmt] = React.useState(0);
-  const [totalState, setTotalState] = React.useState(0);
-  const [isDeposit, setIsDeposit] = React.useState(true);
-  const [atmMode, setAtmMode] = React.useState('');
-  const [validTransaction, setValidTransaction] = React.useState(true);
-
-  let status = `Account Balance $ ${totalState} `;
-  console.log(`Account Rendered with isDeposit: ${isDeposit}`);
-  const handleChange = (event) => {
-    console.log(Number(event.target.value));
-    if (Number(event.target.value) <= 0) {
-      return setValidTransaction(false);
-     else {
-       return setValidTransaction(true);
-    }
-    setDepositAmt(Number(event.target.value));
-  };
-  const handleSubmit = (event) => {
-    let newTotal = isDeposit ? totalState + depositAmt : totalState - depositAmt;
-    setTotalState(newTotal);
-    setValidTransaction(false);
-    event.preventDefault();
+  const [show, setShow]               = React.useState(true);
+  const [status, setStatus]           = React.useState('');
+  const [depositAmt, setDepositAmt]   = React.useState(0);
+  const [balance, setBalance]         = React.useState(0);
+  const ctx                           = React.useContext(UserContext);
+  
+  
+  function handleSubmit(){
+    let newBalance = balance + depositAmt;
+    ctx.users.push({newBalance});
   };
 
-  const handleModeSelect = (event) => {
-    console.log(event.target.value);
-    setAtmMode(event.target.value);
-    setValidTransaction(false);
-    if (event.target.value === 'Deposit') {
-      setIsDeposit(true);
-    } else {
-      setIsDeposit(false);
-    }
-  };
+  
   return (
     <Card
       bgcolor="dark"
       header="Deposit"
       title="Balance: "
-      text="Deposit your balance here"
+      status={status}
+      body={show ? (  
+              <>
+              Deposit<br/>
+              <input type="input" className="form-control" id="depositAmt" placeholder="Enter Deposit Amount" value={depositAmt} onChange={e => setBalance(e.currentTarget.value)} /><br/>
+              <button type="submit" className="btn btn-light" onClick={handleSubmit}>Submit Deposit</button>
+              
     />
   );
 }
