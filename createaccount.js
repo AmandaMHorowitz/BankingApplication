@@ -53,5 +53,5 @@ function CreateAccount(){
               </>
             )}
     />
-  )
+  );
 }
