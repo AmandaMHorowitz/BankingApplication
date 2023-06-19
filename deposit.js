@@ -2,7 +2,7 @@ function Deposit(){
   const [show, setShow]               = React.useState(true);
   const [status, setStatus]           = React.useState('');
   const [depositAmt, setDepositAmt]   = React.useState(0);
-  const [balance, setBalance]         = React.useState(0);
+  const [balance, setBalance]         = React.useState(100);
   const ctx                           = React.useContext(UserContext);
   
   function validate(field, label){
@@ -16,6 +16,7 @@ function Deposit(){
   
   function handleSubmit(){
     let newBalance = balance + depositAmt;
+    balance = newBalance;
     ctx.users.push({newBalance});
     setShow(false);
   }    
@@ -36,7 +37,7 @@ function Deposit(){
       body={show ? (  
               <>
               Balance<br/>
-              value={newBalance} /><br/>
+              value={balance} /><br/>
               Deposit<br/>
               <input type="input" className="form-control" id="depositAmt" placeholder="Enter Deposit Amount" value={depositAmt} /><br/>
               <button type="submit" className="btn btn-light" onClick={handleSubmit}>Submit Deposit</button>
