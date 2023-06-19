@@ -7,7 +7,6 @@ function Deposit(){
       header="Deposit"
       title= "Balance:"
       text= "Deposit your balance here"
-      
     />
-  )
+  );
 }
