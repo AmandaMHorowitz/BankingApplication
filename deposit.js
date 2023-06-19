@@ -31,17 +31,17 @@ function Deposit(){
     <Card
       bgcolor="dark"
       header="Deposit"
-      title="Balance: "
+      title="Balance: ${newBalance}"
       status={status}
       body={show ? (  
               <>
               Deposit<br/>
-              <input type="number" className="form-control" id="depositAmt" placeholder="Enter Deposit Amount" value={depositAmt} onChange={e => setBalance(e.currentTarget.value)} /><br/>
+              <input type="input" className="form-control" id="depositAmt" placeholder="Enter Deposit Amount" value={depositAmt} onChange={e => setBalance(e.currentTarget.value)} /><br/>
               <button type="submit" className="btn btn-light" onClick={handleSubmit}>Submit Deposit</button>
               </>
             ):(
               <>
-              <h5>`newBalance`</h5>
+              <h5>Success</h5>
               <button type="submit" className="btn btn-light" onClick={clearForm}>Make Another Deposit</button>
               </>
             )}
