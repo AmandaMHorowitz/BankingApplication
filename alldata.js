@@ -17,6 +17,6 @@ function AllData(){
            <h5 class="card-title">Password</h5>
         </div>
      </div>
-   />
+  </div>
   ); 
 }
