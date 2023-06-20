@@ -1,10 +1,10 @@
 function AllData(){
   const ctx = React.useContext(UserContext);
   return (
-      <>
+    <div>
       <h5>All Data in Store</h5>
       {JSON.stringify(ctx)}<br/>
-      </>
+    </div>
    <div class="card-group">
      <div class="card">
         <div class="card-body">
