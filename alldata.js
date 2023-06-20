@@ -11,6 +11,7 @@ function AllData(){
     <>
       <h5>All Data in Store</h5>
       {JSON.stringify(ctx)}<br/>
+      {buildCard}<br/>
       <div class="card-group">
         
         <div class="card">
