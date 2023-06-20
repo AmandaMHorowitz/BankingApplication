@@ -4,7 +4,6 @@ function AllData(){
     <>
       <h5>All Data in Store</h5>
       {JSON.stringify(ctx)}<br/>
-    </>
    <div class="card-group">
      <div class="card">
         <div class="card-body">
@@ -22,5 +21,6 @@ function AllData(){
         </div>
      </div>
   </div>
+  </>
   ); 
 }
