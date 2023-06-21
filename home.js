@@ -4,7 +4,7 @@ function Home(){
       txtcolor="black"
       header="Bank of Horowitz"
       title="Welcome to the bank"
-      text="You can move around using the navigation bar."
+      text="Please use this app site for all your banking needs. Security not guaranteed."
       body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
     />    
   );  
