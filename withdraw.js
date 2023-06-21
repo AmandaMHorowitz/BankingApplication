@@ -17,7 +17,7 @@ function Withdraw(){
         setTimeout(() => setStatus(''),5000);
         return false;
       }
-      if (wAmt.trim.length == 0) {
+      if (wAmt.length == 0) {
         setStatus('Error: Please make an entry');
         setTimeout(() => setStatus(''),5000);
         return false;
