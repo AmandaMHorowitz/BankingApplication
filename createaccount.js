@@ -37,7 +37,7 @@ function CreateAccount(){
   }
   
   function buttonDisable() {
-    if (1 == 1) {
+    if (1 == 2) {
       return true;
     }
     else {
